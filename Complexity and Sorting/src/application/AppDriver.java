@@ -23,9 +23,6 @@ public class AppDriver {
 	 * @param args Arguments passed in command line.
 	 */
 	public static void main(String[] args) {
-		TriangularPrism p = new TriangularPrism(30,50);
-		double v = p.getVolume();
-		double b = p.getBaseArea();
 		String filename = null;
 		char sortAlgorithm;
 		Controller controller = null;
@@ -52,13 +49,13 @@ public class AppDriver {
 				switch (value) {
 				case "h": // height
 				case "H":
-					//Polygon polygon1 = new Polygon();
-					//Polygon polygon2 = new Polygon();
-					//comparator = polygon1.compareTo(polygon2);
+					// Polygon polygon1 = new Polygon();
+					// Polygon polygon2 = new Polygon();
+					// comparator = polygon1.compareTo(polygon2);
 					break;
 				case "v": // volume
 				case "V":
-					comparator = new VolumeComparator();					
+					comparator = new VolumeComparator();
 					break;
 				case "a": // base area
 				case "A":
@@ -153,9 +150,18 @@ public class AppDriver {
 					}
 				}
 				sc.close();
-								
-				MyArrays.sort(comparables, controller, comparator);
-								
+
+				// MyArrays.sort(comparables, controller, comparator);
+				
+				for (int i = 0; i < comparables.length; i++) {
+					if (i == 0)
+						System.out.println("The first value: " + ((Polygon) comparables[i]).getHeight());
+					else if (i == comparables.length - 1)
+						System.out.println("The last value: " + ((Polygon) comparables[i]).getHeight());
+					else if (i % 1000 == 0)
+						System.out.println("The " + i + "th value: " + ((Polygon) comparables[i]).getHeight());
+				}
+				System.out.println("done");
 			} catch (FileNotFoundException e) {
 				System.out.println("An error occurred.");
 				e.printStackTrace();

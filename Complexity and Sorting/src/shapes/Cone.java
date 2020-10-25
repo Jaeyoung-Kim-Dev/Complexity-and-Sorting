@@ -28,7 +28,7 @@ public class Cone extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return Math.PI * Math.pow(this.radius, 2) * this.getHeight() / 3;
+		return getBaseArea() * this.getHeight() / 3;
 	}
 	
 	/**

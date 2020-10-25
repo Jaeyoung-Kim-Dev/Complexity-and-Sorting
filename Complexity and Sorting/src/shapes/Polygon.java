@@ -4,13 +4,7 @@ public abstract class Polygon implements Comparable<Polygon> {
 	private double height;
 	private double volume;
 	private double baseArea;
-	
-	@Override
-	public int compareTo(Polygon o) {
-		double difference = this.height - o.height;
-		return (int) difference;
-	}
-		
+			
 	/**
 	 * @param height
 	 */
@@ -45,6 +39,9 @@ public abstract class Polygon implements Comparable<Polygon> {
 		return this.baseArea;
 	}
 	
-	
-
+	@Override
+	public int compareTo(Polygon o) {
+		double difference = this.height - o.height;
+		return (int) difference;
+	}
 }

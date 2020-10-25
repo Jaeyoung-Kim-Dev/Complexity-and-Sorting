@@ -28,7 +28,7 @@ public class Pyramid extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return this.getHeight() * Math.pow(this.edgeLength, 2) / 3;
+		return this.getHeight() * getBaseArea() / 3;
 	}
 	
 	/**

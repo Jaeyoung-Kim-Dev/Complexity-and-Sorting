@@ -28,7 +28,7 @@ public class SquarePrism extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return Math.pow(this.edgeLength, 2) * this.getHeight();
+		return getBaseArea() * this.getHeight();
 	}
 	
 	/**

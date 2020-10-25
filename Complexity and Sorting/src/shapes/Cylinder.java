@@ -28,7 +28,7 @@ public class Cylinder extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return Math.PI * Math.pow(this.radius, 2) * this.getHeight();
+		return getBaseArea() * this.getHeight();
 	}
 	
 	/**

@@ -28,7 +28,7 @@ public class TriangularPrism extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return Math.sqrt(3) / 4 * Math.pow(this.edgeLength, 2) * this.getHeight();
+		return getBaseArea() * this.getHeight();
 	}
 	
 	/**

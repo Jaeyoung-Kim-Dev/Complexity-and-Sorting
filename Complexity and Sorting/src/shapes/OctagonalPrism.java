@@ -28,7 +28,7 @@ public class OctagonalPrism extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return 2 * (1 + Math.sqrt(2)) * Math.pow(this.edgeLength, 2) * this.getHeight();
+		return getBaseArea() * this.getHeight();
 	}
 
 	/**

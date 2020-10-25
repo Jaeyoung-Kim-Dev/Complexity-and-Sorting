@@ -28,7 +28,7 @@ public class PentagonalPrism extends Polygon {
 	 */
 	@Override
 	public double getVolume() {
-		return Math.sqrt(( 5 + 2 * Math.sqrt(5) ) * 5) / 4 * Math.pow(this.edgeLength, 2) * this.getHeight();
+		return getBaseArea() * this.getHeight();
 	}
 	
 	/**
@@ -38,6 +38,6 @@ public class PentagonalPrism extends Polygon {
 	 */
 	@Override
 	public double getBaseArea() {
-		return Math.sqrt(( 5 + 2 * Math.sqrt(5) ) * 5) / 4 * Math.pow(this.edgeLength, 2);
+		return 5 * Math.pow(this.edgeLength, 2) * Math.tan(Math.toRadians(54)) / 4;
 	}
 }
