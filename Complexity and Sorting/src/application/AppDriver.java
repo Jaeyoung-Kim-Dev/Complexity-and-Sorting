@@ -70,27 +70,26 @@ public class AppDriver {
 				case 'b': // bubble
 				case 'B':
 					controller = new BubbleSortController();
-					// bubbleSort(items, comparator);
 					break;
 				case 's': // selection
 				case 'S':
-					// selectionSort(items, comparator);
+					controller = new SelectionSortController();
 					break;
 				case 'i': // insertion
 				case 'I':
-					// selectionSort(items, comparator);
+					controller = new InsertionSortController();
 					break;
 				case 'm': // merge
 				case 'M':
-					// selectionSort(items, comparator);
+					controller = new MergeSortController();
 					break;
 				case 'q': // quick
 				case 'Q':
-					// selectionSort(items, comparator);
+					controller = new QuickSortController();
 					break;
 				case 'z': // my sort
 				case 'Z':
-					// selectionSort(items, comparator);
+					controller = new MySortController();
 					break;
 				}
 
@@ -98,7 +97,7 @@ public class AppDriver {
 			}
 		}
 
-		if (filename != null) {
+		if (filename != null && controller != null && comparator != null ) {
 			try {
 				File file = new File(filename);
 				Scanner sc = new Scanner(file);
@@ -106,9 +105,6 @@ public class AppDriver {
 				int index = 0;
 
 				Comparable[] comparables = new Comparable[arraySize];
-
-				// Polygon poly = (Polygon) comparables[0];
-				// poly.getHeight();
 
 				while (sc.hasNext()) {
 					switch (sc.next()) {
@@ -151,17 +147,8 @@ public class AppDriver {
 				}
 				sc.close();
 
-				// MyArrays.sort(comparables, controller, comparator);
+				MyArrays.sort(comparables, controller, comparator);				
 				
-				for (int i = 0; i < comparables.length; i++) {
-					if (i == 0)
-						System.out.println("The first value: " + ((Polygon) comparables[i]).getHeight());
-					else if (i == comparables.length - 1)
-						System.out.println("The last value: " + ((Polygon) comparables[i]).getHeight());
-					else if (i % 1000 == 0)
-						System.out.println("The " + i + "th value: " + ((Polygon) comparables[i]).getHeight());
-				}
-				System.out.println("done");
 			} catch (FileNotFoundException e) {
 				System.out.println("An error occurred.");
 				e.printStackTrace();
