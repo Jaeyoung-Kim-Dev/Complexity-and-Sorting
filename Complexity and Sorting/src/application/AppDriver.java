@@ -2,9 +2,12 @@ package application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.*;
 
-//import problemdomain.*;
+import comparators.*;
+import controllers.*;
+import shapes.*;
+import utilities.*;
 
 /**
  * This is the application driver for the CPRG311 assignment 2.
@@ -20,8 +23,13 @@ public class AppDriver {
 	 * @param args Arguments passed in command line.
 	 */
 	public static void main(String[] args) {
-
+		TriangularPrism p = new TriangularPrism(30,50);
+		double v = p.getVolume();
+		double b = p.getBaseArea();
 		String filename = null;
+		char sortAlgorithm;
+		Controller controller = null;
+		Comparator comparator = null;
 
 		for (String arg : args) {
 			if (!arg.startsWith("-") || arg.length() < 3)
@@ -36,50 +44,123 @@ public class AppDriver {
 
 			switch (option) {
 			case 'f': // load a file
+			case 'F':
 				filename = value;
 				break;
 			case 't': // compare type
+			case 'T':
 				switch (value) {
 				case "h": // height
+				case "H":
+					//Polygon polygon1 = new Polygon();
+					//Polygon polygon2 = new Polygon();
+					//comparator = polygon1.compareTo(polygon2);
 					break;
 				case "v": // volume
+				case "V":
+					comparator = new VolumeComparator();					
 					break;
 				case "a": // base area
+				case "A":
+					comparator = new BaseAreaComparator();
 					break;
 				}
 				break;
 			case 's': // sort type
-				switch (value) {
-				case "b": // bubble
+			case 'S':
+				sortAlgorithm = value.charAt(0);
+				switch (sortAlgorithm) {
+				case 'b': // bubble
+				case 'B':
+					controller = new BubbleSortController();
+					// bubbleSort(items, comparator);
 					break;
-				case "s": // selection
+				case 's': // selection
+				case 'S':
+					// selectionSort(items, comparator);
 					break;
-				case "i": // insertion
+				case 'i': // insertion
+				case 'I':
+					// selectionSort(items, comparator);
 					break;
-				case "m": // merge
+				case 'm': // merge
+				case 'M':
+					// selectionSort(items, comparator);
 					break;
-				case "q": // quick
+				case 'q': // quick
+				case 'Q':
+					// selectionSort(items, comparator);
 					break;
-				case "z": // my sort
+				case 'z': // my sort
+				case 'Z':
+					// selectionSort(items, comparator);
 					break;
 				}
+
 				break;
 			}
 		}
 
 		if (filename != null) {
 			try {
-			      File file = new File("filename.txt");
-			      Scanner sc = new Scanner(file);
-			      while (sc.hasNext()) {
-			        String data = sc.nextLine();
-			        System.out.println(data);
-			      }
-			      sc.close();
-			    } catch (FileNotFoundException e) {
-			      System.out.println("An error occurred.");
-			      e.printStackTrace();
-			    }
+				File file = new File(filename);
+				Scanner sc = new Scanner(file);
+				int arraySize = sc.nextInt();
+				int index = 0;
+
+				Comparable[] comparables = new Comparable[arraySize];
+
+				// Polygon poly = (Polygon) comparables[0];
+				// poly.getHeight();
+
+				while (sc.hasNext()) {
+					switch (sc.next()) {
+					case "Cylinder":
+						Cylinder cylinder = new Cylinder(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = cylinder;
+						index++;
+						break;
+					case "Cone":
+						Cone cone = new Cone(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = cone;
+						index++;
+						break;
+					case "Pyramid":
+						Pyramid pyramid = new Pyramid(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = pyramid;
+						index++;
+						break;
+					case "SquarePrism":
+						SquarePrism squarePrism = new SquarePrism(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = squarePrism;
+						index++;
+						break;
+					case "TriangularPrism":
+						TriangularPrism triangularPrism = new TriangularPrism(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = triangularPrism;
+						index++;
+						break;
+					case "PentagonalPrism":
+						PentagonalPrism pentagonalPrism = new PentagonalPrism(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = pentagonalPrism;
+						index++;
+						break;
+					case "OctagonalPrism":
+						OctagonalPrism octagonalPrism = new OctagonalPrism(sc.nextDouble(), sc.nextDouble());
+						comparables[index] = octagonalPrism;
+						index++;
+						break;
+					}
+				}
+				sc.close();
+								
+				MyArrays.sort(comparables, controller, comparator);
+								
+			} catch (FileNotFoundException e) {
+				System.out.println("An error occurred.");
+				e.printStackTrace();
+			}
+
 		}
 
 	}
