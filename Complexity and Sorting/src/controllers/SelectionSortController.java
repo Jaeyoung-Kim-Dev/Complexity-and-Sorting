@@ -7,7 +7,9 @@ public class SelectionSortController extends Controller {
     	for (int i=0; i < items.length-1; i++) {
 			int minIndex = i;
 			for (int j = i+1; j < items.length; j++) {
-				if (comparator.compare(items[j], items[minIndex]) < 0) {
+				boolean isComparator = comparator != null && comparator.compare(items[j], items[minIndex]) < 0;
+				boolean isComparable = comparator == null && (items[j]).compareTo(items[minIndex]) < 0;
+				if (isComparator || isComparable) {
 					minIndex = j;
 				}
 			}
