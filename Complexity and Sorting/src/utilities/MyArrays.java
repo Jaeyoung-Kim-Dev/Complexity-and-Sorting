@@ -13,7 +13,7 @@ public class MyArrays {
 
 		start = System.currentTimeMillis();
 
-		controller.sort(items, comparator);		
+		controller.sort(items, comparator);
 		
 		stop = System.currentTimeMillis();
 
