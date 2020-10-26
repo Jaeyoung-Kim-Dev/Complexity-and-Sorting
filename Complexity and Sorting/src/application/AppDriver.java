@@ -49,9 +49,7 @@ public class AppDriver {
 				switch (value) {
 				case "h": // height
 				case "H":
-					// Polygon polygon1 = new Polygon();
-					// Polygon polygon2 = new Polygon();
-					// comparator = polygon1.compareTo(polygon2);
+					comparator = null;				
 					break;
 				case "v": // volume
 				case "V":
@@ -97,7 +95,7 @@ public class AppDriver {
 			}
 		}
 
-		if (filename != null && controller != null && comparator != null ) {
+		if (filename != null && controller != null) {
 			try {
 				File file = new File(filename);
 				Scanner sc = new Scanner(file);

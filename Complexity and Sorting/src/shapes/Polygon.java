@@ -4,7 +4,14 @@ public abstract class Polygon implements Comparable<Polygon> {
 	private double height;
 	private double volume;
 	private double baseArea;
-			
+	
+	/**
+	 * 
+	 */
+	public Polygon() {
+		this.height = 0;
+	}
+	
 	/**
 	 * @param height
 	 */
