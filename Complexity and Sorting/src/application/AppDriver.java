@@ -40,7 +40,7 @@ public class AppDriver {
 			System.out.println("Option: " + option + ", value: " + value);
 
 			switch (option) {
-			case 'f': // load a file
+			case 'f': // file name to load
 			case 'F':
 				filename = value;
 				break;
@@ -87,7 +87,7 @@ public class AppDriver {
 				case 'Q':
 					controller = new QuickSortController();
 					break;
-				case 'z': // my sort
+				case 'z': // my sort (Shell Sort)
 				case 'Z':
 					controller = new MySortController();
 					break;

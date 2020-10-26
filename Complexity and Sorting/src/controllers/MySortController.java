@@ -2,32 +2,41 @@ package controllers;
 
 import java.util.*;
 
+import shapes.Polygon;
+
 public class MySortController extends Controller {
 	public void sort(Comparable[] items, Comparator comparator) {
-		while (!isSorted(items, comparator)) {
-			randomize(items);
-		}
-	}
-
-	private static void randomize(Comparable[] items) {
-		for (int i = 0; i < items.length; i++) {
-			swapElements(items, i, (int) Math.floor(Math.random() * i + 1));
-		}
-	}
-
-	private static void swapElements(Comparable[] items, int i, int j) {
-		Comparable temp = items[i];
-		items[i] = items[j];
-		items[j] = temp;
-	}
-
-	private static <T> boolean isSorted(Comparable[] items, Comparator comparator) {
-		for (int i = 0; i < items.length - 1; i++) {
-			if (comparator.compare(items[i], items[i + 1]) > 0) {
-				return false;
+		if (items == null || items.length == 0)
+			return;
+		
+		int knuthNum = maxKnuthSeqNumber(items.length);
+		while (knuthNum >= 1) {
+			for (int i = 0; i < knuthNum; i++) {
+				insertionSortWithGap(items, comparator, i, knuthNum);
 			}
+			knuthNum = (knuthNum-1)/3; //decrease the gap
 		}
-		return true;
 	}
 
+	private void insertionSortWithGap(Comparable[] items, Comparator comparator, int startIndex, int gap) {
+		int i = startIndex;
+		while (i < items.length) {
+			Polygon current = (Polygon) items[i];
+			int j = i-gap;
+			while (j >=0 && comparator.compare(items[j], current) >= 0) {
+				items[j+gap] = items[j];
+				j = j - gap;
+			}
+			items[j+gap] = current;
+			i = i + gap;
+		}
+	}
+	
+	private int maxKnuthSeqNumber(int size) {
+		int h = 1;
+		while (h < size/3) {
+			h = 3 * h + 1;
+		}
+		return h;
+	}
 }
