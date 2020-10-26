@@ -7,18 +7,18 @@ import shapes.Polygon;
 public class QuickSortController extends Controller {
 
 	public void sort(Comparable[] items, Comparator comparator) {
-		quicksort(items, 0, items.length - 1, comparator);
+		quicksort(items, comparator, 0, items.length - 1);
 	}
 
-	public void quicksort(Comparable[] items, int start, int end, Comparator comparator) {
+	public void quicksort(Comparable[] items, Comparator comparator, int start, int end) {
 		if (start < end) {
-			int pivotIndex = partition(items, start, end, comparator);
-			quicksort(items, start, pivotIndex - 1, comparator);
-			quicksort(items, pivotIndex + 1, end, comparator);
+			int pivotIndex = partition(items, comparator, start, end);
+			quicksort(items, comparator, start, pivotIndex - 1);
+			quicksort(items, comparator, pivotIndex + 1, end);
 		}
 	}
 
-	private int partition(Comparable[] items, int start, int end, Comparator comparator) {
+	private int partition(Comparable[] items, Comparator comparator, int start, int end) {
 		Polygon pivot = (Polygon) items[end];
 		int i = start;
 		for (int j = start; j <= end - 1; j++) {
