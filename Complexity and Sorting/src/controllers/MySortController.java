@@ -8,13 +8,13 @@ public class MySortController extends Controller {
 	public void sort(Comparable[] items, Comparator comparator) {
 		if (items == null || items.length == 0)
 			return;
-		
+
 		int knuthNum = maxKnuthSeqNumber(items.length);
 		while (knuthNum >= 1) {
 			for (int i = 0; i < knuthNum; i++) {
 				insertionSortWithGap(items, comparator, i, knuthNum);
 			}
-			knuthNum = (knuthNum-1)/3; //decrease the gap
+			knuthNum = (knuthNum - 1) / 3; // decrease the gap
 		}
 	}
 
@@ -22,19 +22,26 @@ public class MySortController extends Controller {
 		int i = startIndex;
 		while (i < items.length) {
 			Polygon current = (Polygon) items[i];
-			int j = i-gap;
-			while (j >=0 && comparator.compare(items[j], current) >= 0) {
-				items[j+gap] = items[j];
-				j = j - gap;
+			int j = i - gap;
+			if (comparator != null) {
+				while (j >= 0 && comparator.compare(items[j], current) >= 0) {
+					items[j + gap] = items[j];
+					j = j - gap;
+				}
+			} else {
+				while (j >= 0 && (items[j]).compareTo(current) >= 0) {
+					items[j + gap] = items[j];
+					j = j - gap;
+				}
 			}
-			items[j+gap] = current;
+			items[j + gap] = current;
 			i = i + gap;
 		}
 	}
-	
+
 	private int maxKnuthSeqNumber(int size) {
 		int h = 1;
-		while (h < size/3) {
+		while (h < size / 3) {
 			h = 3 * h + 1;
 		}
 		return h;
