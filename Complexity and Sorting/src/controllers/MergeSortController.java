@@ -22,14 +22,16 @@ public class MergeSortController extends Controller {
 		Comparable[] left = new Comparable[sizeOfLeft];
 		Comparable[] right = new Comparable[sizeOfRight];
 		for (int i = 0; i < sizeOfLeft; i++) {
-			left[i] = items[start + i]; // be careful here
+			left[i] = items[start + i];
 		}
 		for (int j = 0; j < sizeOfRight; j++) {
-			right[j] = items[mid + 1 + j]; // be careful
+			right[j] = items[mid + 1 + j];
 		}
 		int i = 0, j = 0;
 		for (int k = start; k <= end; k++) {
-			if ((j >= sizeOfRight) || (i < sizeOfLeft && comparator.compare(left[i], right[j]) <= 0)) {
+			boolean isComparator = comparator != null && ((j >= sizeOfRight) || (i < sizeOfLeft && comparator.compare(left[i], right[j]) <= 0));
+			boolean isComparable = comparator == null && ((j >= sizeOfRight) || (i < sizeOfLeft && left[i].compareTo(right[j]) <= 0));
+			if (isComparator || isComparable) {
 				items[k] = left[i];
 				i++;
 			} else {

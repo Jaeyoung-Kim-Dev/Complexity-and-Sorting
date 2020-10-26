@@ -49,6 +49,13 @@ public abstract class Polygon implements Comparable<Polygon> {
 	@Override
 	public int compareTo(Polygon o) {
 		double difference = this.height - o.height;
-		return (int) difference;
+		if (difference < 0) {
+			return 1;
+		} else if (difference > 0) {
+			return -1;
+		} else // this.height == o.height
+		{
+			return 0;
+		}
 	}
 }
