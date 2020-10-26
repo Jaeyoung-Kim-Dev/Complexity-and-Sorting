@@ -22,7 +22,9 @@ public class QuickSortController extends Controller {
 		Polygon pivot = (Polygon) items[end];
 		int i = start;
 		for (int j = start; j <= end - 1; j++) {
-			if (comparator.compare((Polygon) items[j], pivot) < 0) {
+			boolean isComparator = comparator != null && comparator.compare((Polygon) items[j], pivot) < 0;
+			boolean isComparable = comparator == null && ((Polygon) items[j]).compareTo(pivot) < 0;
+			if (isComparator || isComparable) {
 				Polygon tmp = (Polygon) items[i];
 				items[i] = items[j];
 				items[j] = tmp;
