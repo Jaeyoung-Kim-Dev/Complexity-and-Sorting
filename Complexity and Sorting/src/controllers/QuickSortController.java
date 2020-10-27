@@ -1,9 +1,14 @@
 package controllers;
 
 import java.util.*;
-
 import shapes.Polygon;
 
+/**
+ * Quick Sort Controller
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class QuickSortController extends Controller {
 
 	public void sort(Comparable[] items, Comparator comparator) {

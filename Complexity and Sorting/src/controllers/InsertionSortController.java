@@ -1,9 +1,14 @@
 package controllers;
 
 import java.util.*;
-
 import shapes.Polygon;
 
+/**
+ * Insersion Sort Controller
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class InsertionSortController extends Controller {	
 	public void sort(Comparable[] items, Comparator comparator) {
 		for (int i = 0; i < items.length; i++) {

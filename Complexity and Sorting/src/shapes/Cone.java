@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Cone shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -13,8 +15,8 @@ public class Cone extends Polygon {
 	/**
 	 * User-defined constructor for Cone
 	 * 
-	 * @param height
-	 * @param radius
+	 * @param height cone's height
+	 * @param radius cone's radius
 	 */
 	public Cone(double height, double radius) {
 		super(height);		

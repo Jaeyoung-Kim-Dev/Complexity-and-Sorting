@@ -10,9 +10,14 @@ import shapes.*;
 import utilities.*;
 
 /**
- * This is the application driver for the CPRG311 assignment 2.
+ * This is the application driver for the Complexity and Sorting. There are six
+ * sorting algorithms that bubble, insertion, selection, merge, quick and a sort
+ * of my choice which is shell sorting. It sorts by three type of shape
+ * (height, volume and base area) from the largest to smallest (descending
+ * order).
  * 
  * @author Jaeyoung Kim
+ * @version 1.0, October 26, 2020
  *
  */
 public class AppDriver {
@@ -32,16 +37,14 @@ public class AppDriver {
 			if (!arg.startsWith("-") || arg.length() < 3)
 				continue;
 
-			System.out.println(arg);
-
 			char option = arg.charAt(1);
 			String value = arg.substring(2);
-
-			System.out.println("Option: " + option + ", value: " + value);
+			String displayOption = "";
 
 			switch (option) {
 			case 'f': // file name to load
 			case 'F':
+				displayOption = "File name: " + value;
 				filename = value;
 				break;
 			case 't': // compare type
@@ -49,15 +52,18 @@ public class AppDriver {
 				switch (value) {
 				case "h": // height
 				case "H":
-					comparator = null;				
+					comparator = null;
+					displayOption = "Compare Type: Height";
 					break;
 				case "v": // volume
 				case "V":
 					comparator = new VolumeComparator();
+					displayOption = "Compare Type: Volume";
 					break;
 				case "a": // base area
 				case "A":
 					comparator = new BaseAreaComparator();
+					displayOption = "Compare Type: Base Area";
 					break;
 				}
 				break;
@@ -67,32 +73,39 @@ public class AppDriver {
 				switch (sortAlgorithm) {
 				case 'b': // bubble
 				case 'B':
+					displayOption = "Sort Type: Bubble Sort";
 					controller = new BubbleSortController();
 					break;
 				case 's': // selection
 				case 'S':
+					displayOption = "Sort Type: Selection Sort";
 					controller = new SelectionSortController();
 					break;
 				case 'i': // insertion
 				case 'I':
+					displayOption = "Sort Type: Insertion Sort";
 					controller = new InsertionSortController();
 					break;
 				case 'm': // merge
 				case 'M':
+					displayOption = "Sort Type: Merge Sort";
 					controller = new MergeSortController();
 					break;
 				case 'q': // quick
 				case 'Q':
+					displayOption = "Sort Type: Quick Sort";
 					controller = new QuickSortController();
 					break;
 				case 'z': // my sort (Shell Sort)
 				case 'Z':
+					displayOption = "Sort Type: My (Shell) Sort";
 					controller = new MySortController();
 					break;
 				}
 
 				break;
 			}
+			System.out.println(displayOption + "\n");
 		}
 
 		if (filename != null && controller != null) {
@@ -145,8 +158,8 @@ public class AppDriver {
 				}
 				sc.close();
 
-				MyArrays.sort(comparables, controller, comparator);				
-				
+				MyArrays.sort(comparables, controller, comparator);
+
 			} catch (FileNotFoundException e) {
 				System.out.println("An error occurred.");
 				e.printStackTrace();

@@ -4,6 +4,12 @@ import java.util.*;
 
 import shapes.Polygon;
 
+/**
+ * Volume Comparator
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class VolumeComparator implements Comparator<Polygon> {
 	public int compare(Polygon a, Polygon b) {
 		if (a.getVolume() < b.getVolume()) {

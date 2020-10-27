@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Pyramid shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -13,8 +15,8 @@ public class Pyramid extends Polygon {
 	/**
 	 * User-defined constructor for Pyramid
 	 * 
-	 * @param height
-	 * @param edgeLength
+	 * @param height Pyramid's height
+	 * @param edgeLength Pyramid's edge length
 	 */
 	public Pyramid(double height, double edgeLength) {
 		super(height);

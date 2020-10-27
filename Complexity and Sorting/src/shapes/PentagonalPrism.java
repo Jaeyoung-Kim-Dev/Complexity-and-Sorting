@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Pentagonal Prism shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -13,8 +15,8 @@ public class PentagonalPrism extends Polygon {
 	/**
 	 * User-defined constructor for PentagonalPrism
 	 * 
-	 * @param height
-	 * @param edgeLength
+	 * @param height Pentagonal prism's height
+	 * @param edgeLength Pentagonal prism's edge length
 	 */
 	public PentagonalPrism(double height, double edgeLength) {
 		super(height);

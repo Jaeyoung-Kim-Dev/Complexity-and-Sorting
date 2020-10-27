@@ -2,6 +2,12 @@ package controllers;
 
 import java.util.*;
 
+/**
+ * Selection Sort Controller
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class SelectionSortController extends Controller {  
     public void sort(Comparable[] items, Comparator comparator) { 
     	for (int i=0; i < items.length-1; i++) {

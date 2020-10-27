@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Cylinder shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -13,8 +15,8 @@ public class Cylinder extends Polygon {
 	/**
 	 * User-defined constructor for Cylinder
 	 * 
-	 * @param height
-	 * @param radius
+	 * @param height cylinder's height
+	 * @param radius cylinder's radius
 	 */
 	public Cylinder(double height, double radius) {
 		super(height);

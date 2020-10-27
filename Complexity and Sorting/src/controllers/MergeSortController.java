@@ -2,6 +2,12 @@ package controllers;
 
 import java.util.*;
 
+/**
+ * Merge Sort Controller
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class MergeSortController extends Controller {  
     public void sort(Comparable[] items, Comparator comparator) { 
     	mergeSort(items, comparator, 0, items.length-1);

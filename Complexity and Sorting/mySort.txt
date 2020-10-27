@@ -1,0 +1,7 @@
+The sorting algorithm I chose is Shell sort.
+It is conceived from which the insertion sorting algorithm produces optimal performance in an array that is almost aligned.
+The insertion sorting algorithm is first performed at a sparse interval, and as the gap gradually narrows,
+the nearly aligned array is finally finished with an insertion sorting algorithm.
+The algorithm itself is not a commonly used algorithm because the time complexity is not clear
+and is not much better than quick or merge sorting.
+The name shell alignment comes from the name of the developer Donald Shell.

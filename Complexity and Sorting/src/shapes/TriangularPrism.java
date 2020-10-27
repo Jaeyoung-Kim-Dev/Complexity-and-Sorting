@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Triangular Prism shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -13,8 +15,8 @@ public class TriangularPrism extends Polygon {
 	/**
 	 * User-defined constructor for TrianglarPrism
 	 * 
-	 * @param height
-	 * @param edgeLength
+	 * @param height Triangular prism's height
+	 * @param edgeLength Triangular prism's edge length
 	 */
 	public TriangularPrism(double height, double edgeLength) {
 		super(height);

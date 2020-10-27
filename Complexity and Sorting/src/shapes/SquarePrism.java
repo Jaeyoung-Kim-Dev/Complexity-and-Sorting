@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Square Prism shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -13,8 +15,8 @@ public class SquarePrism extends Polygon {
 	/**
 	 * User-defined constructor for SquarePrism
 	 * 
-	 * @param height
-	 * @param edgeLength
+	 * @param height Square prism's height
+	 * @param edgeLength Square prism's edge length
 	 */
 	public SquarePrism(double height, double edgeLength) {
 		super(height);

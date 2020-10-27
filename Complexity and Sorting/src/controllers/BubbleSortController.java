@@ -1,9 +1,14 @@
 package controllers;
 
 import java.util.*;
-
 import shapes.Polygon;
 
+/**
+ * Bubble Sort Controller
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class BubbleSortController extends Controller {
 	public void sort(Comparable[] items, Comparator comparator) {
 

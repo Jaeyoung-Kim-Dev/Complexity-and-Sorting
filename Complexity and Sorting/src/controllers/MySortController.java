@@ -4,6 +4,12 @@ import java.util.*;
 
 import shapes.Polygon;
 
+/**
+ * My Shell Sort Controller which is Shell Sort
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class MySortController extends Controller {
 	public void sort(Comparable[] items, Comparator comparator) {
 		if (items == null || items.length == 0)

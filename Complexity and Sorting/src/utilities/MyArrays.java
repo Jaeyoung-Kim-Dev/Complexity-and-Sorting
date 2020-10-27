@@ -6,6 +6,13 @@ import comparators.*;
 import controllers.*;
 import shapes.Polygon;
 
+/**
+ * MyArrays class sorts items by using controllers and comparators.
+ * It also prints the time for the sorting and prints out the values.
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public class MyArrays {
 	public static void sort(Comparable[] items, Controller controller, Comparator comparator) {
 		long start, stop, timeTaken;
@@ -36,6 +43,6 @@ public class MyArrays {
 				System.out.println("The " + (i + 1) + "th value: " + sorted);				
 			}			
 		}
-		System.out.println("This is the time for sorting: " + timeTaken + "ms");
+		System.out.println("\nThis is the time for sorting: " + timeTaken + "ms");
 	}
 }

@@ -1,19 +1,18 @@
 package shapes;
 
+/**
+ * Base Polygon shape
+ * 
+ * @author Jaeyoung Kim
+ *
+ */
 public abstract class Polygon implements Comparable<Polygon> {
 	private double height;
 	private double volume;
 	private double baseArea;
-	
+		
 	/**
-	 * 
-	 */
-	public Polygon() {
-		this.height = 0;
-	}
-	
-	/**
-	 * @param height
+	 * @param height polygon's height
 	 */
 	public Polygon(double height) {
 		this.height = height;

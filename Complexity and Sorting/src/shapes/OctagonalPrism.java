@@ -4,6 +4,8 @@
 package shapes;
 
 /**
+ * Octagonal Prism shape
+ * 
  * @author Jaeyoung Kim
  *
  */
@@ -12,9 +14,9 @@ public class OctagonalPrism extends Polygon {
 
 	/**
 	 * User-defined constructor for OctagonalPrism
-	 * 
-	 * @param height
-	 * @param edgeLength
+	 *  	 
+	 * @param height Octagonal prism's height
+	 * @param edgeLength Octagonal prism's edge length
 	 */
 	public OctagonalPrism(double height, double edgeLength) {
 		super(height);
