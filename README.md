@@ -3,7 +3,7 @@
 ## What the program does:
 This is the application driver for the Complexity and Sorting.
 There are six sorting algorithms that bubble, insertion, selection, merge, quick and a sort of my choice which is shell sorting.
-It sorts by three type of shape (height, volume and base area) from the largest to smallest (descending order).
+It sorts by three types of shape (height, volume and base area) from the largest to smallest (descending order).
 
 ## The author:
 Jaeyoung Kim
