@@ -16,20 +16,13 @@ Jaeyoung Kim
 
 5) Command examples
 java -jar sort.jar -sB -th -fpolyfor1.txt
+
+java -jar sort.jar -TA -Fpolyfor1.txt -SS
+
+java -jar sort.jar -fpolyfor1.txt -Si -tV
+
 java -jar sort.jar -sB -th -fpolyfor1.txt
-java -jar sort.jar -sB -th -fpolyfor1.txt
-java -jar sort.jar -sB -th -fpolyfor1.txt
-java -jar sort.jar -sB -th -fpolyfor1.txt
-java -jar sort.jar -sB -th -fpolyfor1.txt
-java -jar sort.jar -TA -Fpolyfor3.txt -Sb
-java -jar sort.jar -TA -Fpolyfor3.txt -SS
-java -jar sort.jar -TA -Fpolyfor3.txt -Si
-java -jar sort.jar -TA -Fpolyfor3.txt -SM
-java -jar sort.jar -TA -Fpolyfor3.txt -Sq
-java -jar sort.jar -TA -Fpolyfor3.txt -SV
-java -jar sort.jar -fpolyfor5.txt -Sb -tV
-java -jar sort.jar -fpolyfor5.txt -SS -tV
-java -jar sort.jar -fpolyfor5.txt -Si -tV
-java -jar sort.jar -fpolyfor5.txt -SM -tV
-java -jar sort.jar -fpolyfor5.txt -Sq -tV
-java -jar sort.jar -fpolyfor5.txt -SZ -tV
+
+java -jar sort.jar -TA -Fpolyfor1.txt -Sq
+
+java -jar sort.jar -fpolyfor1.txt -SZ -tV
