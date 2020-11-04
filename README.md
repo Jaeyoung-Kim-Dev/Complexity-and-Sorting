@@ -16,7 +16,7 @@ Jaeyoung Kim
 
 5) Command examples
 
-java -jar sort.jar -sB -th -fpolyfor1.txt
+`java -jar sort.jar -sB -th -fpolyfor1.txt
 
 java -jar sort.jar -TA -Fpolyfor1.txt -SS
 
@@ -26,4 +26,4 @@ java -jar sort.jar -sB -th -fpolyfor1.txt
 
 java -jar sort.jar -TA -Fpolyfor1.txt -Sq
 
-java -jar sort.jar -fpolyfor1.txt -SZ -tV
+java -jar sort.jar -fpolyfor1.txt -SZ -tV`
